@@ -1,5 +1,5 @@
 <script lang='ts'>
-  import {HeroSection, AboutMeSection} from '$components';
+  import {HeroSection, AboutMeSection,} from '$components';
 
 </script>
 

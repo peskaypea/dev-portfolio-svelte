@@ -1,6 +1,6 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
-  import { SectionHeadline, Button } from "$components";
+  import { SectionHeadline, Button, ExperienceTable } from "$components";
   import image from "$assets/about-me.jpeg";
 
   function onclick(){
@@ -31,9 +31,10 @@
         working on creative side projects that blend tech, freedom, and
         community.
       </p>
+        <Button className="mt-m" {onclick}>Tell me about your porject</Button>
     </div>
   </div>
-  <Button className="mt-m" {onclick}>Tell me about your porject</Button>
+  <ExperienceTable />
 </section>
 
 <style>

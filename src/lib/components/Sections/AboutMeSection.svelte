@@ -1,17 +1,16 @@
 <script lang="ts">
-  import { goto } from "$app/navigation";
-  import { SectionHeadline, Button, ExperienceTable } from "$components";
+  import { Button, SectionHeadline, ExperienceTable } from "$components";
   import image from "$assets/about-me.jpeg";
-    import type { DevExperience } from "$lib/types/sanity";
+  import { goto } from "$app/navigation";
 
   interface AboutMeProps {
-    workExperience: DevExperience[];
+    workExperience: SanityWorkExperience[];
   }
 
-let {workExperience}: AboutMeProps = $props();
+  let { workExperience }: AboutMeProps = $props();
 
-  function onclick(){
-    goto("/#contact-form")
+  function onclick() {
+    goto("/#contact-form");
   }
 </script>
 
@@ -21,27 +20,28 @@ let {workExperience}: AboutMeProps = $props();
     <img class="image" src={image} alt="" />
     <div class="text">
       <p>
-        Hi, I’m Zane — a Full-Stack developer and designer with a passion for
-        creating fast, functional, and visually compelling websites. I’ve spent
-        the past 3+ years building and refining digital experiences that not
-        only look great but convert users into customers.
+        Hey, I'm Niklas, the driving force behind my freelancing agency
+        specializing in web development and data science.
       </p>
       <p>
-        With a foundation in HTML, SCSS, JavaScript, and Svelte, I build
-        responsive, mobile-first interfaces that are smooth, interactive, and
-        easy to maintain. I also bring a strong design eye and a love for clean,
-        reusable code—whether I’m animating with GSAP, working in a Bootstrap
-        environment, or setting up modern stacks with Vite.
+        With years of hands-on experience tackling real-world coding challenges
+        and meeting diverse client needs, I've built a deep understanding of the
+        tech landscape. But beyond coding, my true passion lies in teaching.
+        I've had the privilege of guiding hundreds of aspiring developers,
+        focusing on making coding both practical and accessible. My goal is to
+        translate complex concepts into actionable skills that you can apply
+        right away.
       </p>
       <p>
-        When I'm not coding, I'm usually in the ocean — surfing, exploring, or
-        working on creative side projects that blend tech, freedom, and
-        community.
+        Through my courses, I’m committed to sharing the insights and lessons
+        I’ve learned in the field, so you can skip the pitfalls and fast-track
+        your development journey. If you're eager to learn from real-world
+        experience and practical know-how, let's dive in together.
       </p>
-        <Button className="mt-m" {onclick}>Tell me about your porject</Button>
+      <Button className="mt-m" {onclick}>Tell me about your project</Button>
     </div>
   </div>
-  <ExperienceTable {workExperience}/>
+  <ExperienceTable {workExperience} />
 </section>
 
 <style>

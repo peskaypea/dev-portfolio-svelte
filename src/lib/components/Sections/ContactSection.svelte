@@ -1,3 +1,47 @@
+<script lang="ts">
+    import Button from "$components/Button.svelte";
+    import SectionHeadline from "$components/SectionHeadline.svelte";
+
+    let contactName = $state("");
+    let contactEmail = $state("");
+    let informationAboutProject = $state("");
+    let isFormvalid = $state(false);
+
+    $inspect(isFormvalid);
+
+    function onSubmit(event: Event){
+      event.preventDefault();
+      if(contactName && contactEmail && informationAboutProject){
+       
+      } else {
+        isFormvalid = true;
+      }
+    }
+  
+    $effect(() => {
+      if (contactName || contactEmail || informationAboutProject ) {
+        isFormvalid = false
+      }
+    })
+
+</script>
+<section class="mt-l">
+  <SectionHeadline sectionName="contact-form">Let's talk</SectionHeadline>
+  <div class="form-container default-margin mt-m">
+    <form action="">
+      <input class={`text-input mb-m ${isFormvalid && !Boolean(contactName.length) && 'input-error'}`} placeholder="Your Name" bind:value={contactName}>
+      <input class={`text-input mb-m ${isFormvalid && !Boolean(contactEmail.length) && 'input-error'}`} placeholder="Your Email" bind:value={contactEmail}>
+      <textarea class={`text-input mb-m ${isFormvalid && !Boolean(informationAboutProject.length) && 'input-error'}`} placeholder="Tell me what's up." id=""bind:value={informationAboutProject}></textarea>
+      <Button onclick={onSubmit}>Submit</Button>
+    </form>
+    <div class="form-text">
+      <h3 class="bold mb-s"> Talk to me about your project</h3>
+      <p>I'm always open to discussing product design work or partnership opportunities.</p>
+    </div>
+  </div>
+</section>
+
+
 <style>
   section {
     padding-bottom: 140px;

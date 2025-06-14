@@ -1,5 +1,5 @@
 <script lang='ts'>
-  import {HeroSection, AboutMeSection, MyWorkSection, SkillsSection} from '$components';
+  import {HeroSection, AboutMeSection, MyWorkSection, SkillsSection, ContactSection} from '$components';
 
 
 
@@ -14,3 +14,4 @@
 <AboutMeSection {workExperience}/>
 <MyWorkSection {projects}/>
 <SkillsSection  {skills}/>
+<ContactSection />

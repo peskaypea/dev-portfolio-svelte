@@ -1,3 +1,20 @@
+<script type="ts">
+    import { goto } from "$app/navigation";
+    import Button from "./Button.svelte";
+
+    function goToContactForm(){
+      goto ('#contact-form')
+    }
+
+</script>
+<nav class="navbar default-margin">
+  <a href="/" class="logo">ZR</a>
+  <div class="navbar-links">
+    <a href="/#about-me" class="nav-link">About Me</a>
+    <a href="/#my-work" class="nav-link">Work</a>
+<Button className="nav-bar" onclick={goToContactForm}>Contact</Button>
+  </div>
+  </nav>
 <style>
   .navbar {
     display: flex;

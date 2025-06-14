@@ -5,6 +5,7 @@
     skills: Skill[]
   }
   let {skills}: SkillsSectionProps = $props();
+  
 </script>
 
 <section class="mt-l">
